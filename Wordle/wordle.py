@@ -57,21 +57,24 @@ def wordle(word):
         print(' '.join(abt))
         
         if answer.count('32') == 5:
+            successFlag = True
             print(f'\n축하합니다! {life}번만에 맞추셨습니다!')
             break
         elif life == 6:
+            successFlag = False
             print('\n6번의 기회를 모두 사용했지만 정답을 맞추는 것에 실패했습니다.')
             print(f'오늘의 단어는 {word}입니다.')
             break
         
-    score = str(input('점수 결과를 공유하시겠습니까? (Y|N)): \n')).lower()
+    score = str(input('점수 결과를 공유하시겠습니까? (Y|N)): \n')).upper()
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     if score == 'Y': 
         for i in out_block:
             for j in i:
                 print(j, end='')
             print()
-        print(f"\n[{now}] {life}번만에 성공했습니다! 축하합니다!")
+        if successFlag:
+            print(f"\n[{now}] {life}번만에 성공했습니다! 축하합니다!")
     else:
         print(f"[{now}] 게임 완료. 수고하셨습니다.")
 
