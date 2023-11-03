@@ -1,14 +1,14 @@
 from english_words import get_english_words_set
-import string
 import random
 from colorama import Fore, Style
 from datetime import datetime
 
 dic = get_english_words_set(['web2'])
+alphabets = 'abcdefghijklmnopqrstuvwxyz'
 
 def random_word_generator(num):
     while True:    
-        letter = "".join(random.sample(string.ascii_lowercase, num))
+        letter = "".join(random.sample(alphabets, num))
         if (letter in dic) == True:
             break
     return letter
@@ -16,7 +16,7 @@ def random_word_generator(num):
 def wordle(word):
     print("게임을 시작합니다.")
     life = 0
-    abt = list(string.ascii_lowercase)
+    abt = list(alphabets)
     out_block = ["※ tried ※"]
     while True:
         life = life+1
