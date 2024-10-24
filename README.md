@@ -1,6 +1,2 @@
-# python-scripts
-Enjoyable python scripts made while exploring 🐍
-
-# list
-## [Wordle](https://github.com/detourguru/python-scripts/tree/main/Wordle)
-
+# wordle
+터미널에서 플레이 가능합니다
